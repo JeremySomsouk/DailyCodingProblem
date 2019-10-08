@@ -1,3 +1,5 @@
+package Google;
+
 /*
 
 Good morning! Here's your coding interview problem for today.
@@ -16,9 +18,9 @@ import java.util.List;
 
 class Problem1 {
 
-    static boolean isSumPossible(int k, List<Integer> nbList) {
+    static boolean isSumPossible(int expectedSum, List<Integer> nbList) {
 
-        if (k == 0 || nbList.isEmpty() || nbList.size() == 1) {
+        if (expectedSum == 0 || nbList.isEmpty() || nbList.size() == 1) {
             return false;
         }
 
@@ -27,7 +29,7 @@ class Problem1 {
 
         for (int i = 0; i <= beforeLastIndex; ++i) {
             for (int next = i + 1; next <= lastIndex; ++next) {
-                if (nbList.get(i) + nbList.get(next) == k) {
+                if (nbList.get(i) + nbList.get(next) == expectedSum) {
                     return true;
                 }
             }

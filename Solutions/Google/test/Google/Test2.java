@@ -1,3 +1,5 @@
+package Google;
+
 /*
 
 Given the root to a binary tree,
@@ -19,8 +21,11 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 
 */
 
+import Google.Problem2.Node;
 import org.junit.jupiter.api.Test;
 
+import static Google.Problem2.deserialize;
+import static Google.Problem2.serialize;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class Test2 {
@@ -28,19 +33,19 @@ class Test2 {
     @Test
     void serializeDeserialize_shouldReturnValue() {
 
-        Problem2.Node root = new Problem2.Node("root", new Problem2.Node("left", new Problem2.Node("left.left")), new Problem2.Node("right"));
-        assertThat(Problem2.deserialize(Problem2.serialize(root)).getLeft().getLeft().getValue()).isEqualTo("left.left");
+        Node root = new Node("root", new Node("left", new Node("left.left")), new Node("right"));
+        assertThat(deserialize(serialize(root)).getLeft().getLeft().getValue()).isEqualTo("left.left");
     }
 
     @Test
     void serializeDeserialize_shouldReturnValueNullChild_whenOnlyRootNode() {
 
-        Problem2.Node root = new Problem2.Node("root");
+        Node root = new Node("root");
 
-        String serializedRoot = Problem2.serialize(root);
+        String serializedRoot = serialize(root);
         assertThat(serializedRoot).isEqualTo("root-/-/-");
 
-        Problem2.Node deserializedNode = Problem2.deserialize(serializedRoot);
+        Node deserializedNode = deserialize(serializedRoot);
         assertThat(deserializedNode.getLeft()).isNull();
         assertThat(deserializedNode.getRight()).isNull();
     }
@@ -48,13 +53,13 @@ class Test2 {
     @Test
     void serializeDeserialize_shouldReturnLeftValue_whenRootAndLeftChild() {
 
-        Problem2.Node left = new Problem2.Node("left");
-        Problem2.Node root = new Problem2.Node("root", left);
+        Node left = new Node("left");
+        Node root = new Node("root", left);
 
-        String serializedNode = Problem2.serialize(root);
+        String serializedNode = serialize(root);
         assertThat(serializedNode).isEqualTo("root-left-/-/-/-");
 
-        Problem2.Node deserializedNode = Problem2.deserialize(serializedNode);
+        Node deserializedNode = deserialize(serializedNode);
         assertThat(deserializedNode.getLeft()).isEqualTo(left);
         assertThat(deserializedNode.getRight()).isNull();
     }

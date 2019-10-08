@@ -1,3 +1,5 @@
+package Google;
+
 /*
 
 Given the root to a binary tree,
@@ -26,7 +28,6 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import java.util.stream.Collectors;
 
 class Problem2 {
 
@@ -38,22 +39,15 @@ class Problem2 {
             return EMPTY_MARKER + "-";
         }
 
-        StringBuilder result = new StringBuilder();
-        result.append(node.value).append("-");
-        result.append(serialize(node.left));
-        result.append(serialize(node.right));
-
-        return result.toString();
+        return node.value + "-" + serialize(node.left) + serialize(node.right);
     }
-
 
     static Node deserialize(String serializedNode) {
 
         List<String> nodeList = Arrays.asList(serializedNode.split("-"));
-        Queue<String> nodeQueue = new LinkedList<>(nodeList.stream().filter(str -> !str.isEmpty()).collect(Collectors.toList()));
+        Queue<String> nodeQueue = new LinkedList<>(nodeList);
         return deserialize(nodeQueue);
     }
-
 
     private static Node deserialize(Queue<String> serializedNodes) {
 
@@ -76,7 +70,7 @@ class Problem2 {
 
     @Getter
     @EqualsAndHashCode
-    public static class Node {
+    static class Node {
 
         private String value;
         private Node left;

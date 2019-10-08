@@ -1,3 +1,5 @@
+package Google;
+
 /*
 
 Good morning! Here's your coding interview problem for today.
@@ -17,6 +19,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static Google.Problem1.isSumPossible;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class Test1 {
@@ -27,9 +30,8 @@ class Test1 {
         List<Integer> nbList = Arrays.asList(10, 15, 3, 7);
         int k = 17;
 
-        assertThat(Problem1.isSumPossible(k, nbList)).isTrue();
+        assertThat(isSumPossible(k, nbList)).isTrue();
     }
-
 
 
     @Test
@@ -38,7 +40,7 @@ class Test1 {
         List<Integer> nbList = Arrays.asList(10, 7, 10, 7);
         int k = 17;
 
-        assertThat(Problem1.isSumPossible(k, nbList)).isTrue();
+        assertThat(isSumPossible(k, nbList)).isTrue();
     }
 
 
@@ -48,7 +50,7 @@ class Test1 {
         List<Integer> nbList = Arrays.asList(10, 7);
         int k = 17;
 
-        assertThat(Problem1.isSumPossible(k, nbList)).isTrue();
+        assertThat(isSumPossible(k, nbList)).isTrue();
     }
 
     @Test
@@ -57,7 +59,7 @@ class Test1 {
         List<Integer> nbList = Arrays.asList();
         int k = 17;
 
-        assertThat(Problem1.isSumPossible(k, nbList)).isFalse();
+        assertThat(isSumPossible(k, nbList)).isFalse();
     }
 
     @Test
@@ -66,7 +68,7 @@ class Test1 {
         List<Integer> nbList = Arrays.asList(1);
         int k = 17;
 
-        assertThat(Problem1.isSumPossible(k, nbList)).isFalse();
+        assertThat(isSumPossible(k, nbList)).isFalse();
     }
 
     @Test
@@ -75,7 +77,7 @@ class Test1 {
         List<Integer> nbList = Arrays.asList(10, 15, 3, 7);
         int k = 0;
 
-        assertThat(Problem1.isSumPossible(k, nbList)).isFalse();
+        assertThat(isSumPossible(k, nbList)).isFalse();
     }
 
     @Test
@@ -84,6 +86,6 @@ class Test1 {
         List<Integer> nbList = Arrays.asList(10, 15, 3, 6);
         int k = 17;
 
-        assertThat(Problem1.isSumPossible(k, nbList)).isFalse();
+        assertThat(isSumPossible(k, nbList)).isFalse();
     }
 }
