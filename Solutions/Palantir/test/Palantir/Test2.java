@@ -9,7 +9,7 @@ For example, the list [1,2,3] should return [1,3,2]. The list [1,3,2] should ret
 
 Can you perform the operation without allocating extra memory (disregarding the input memory
 
- */
+*/
 
 import org.junit.jupiter.api.Test;
 
