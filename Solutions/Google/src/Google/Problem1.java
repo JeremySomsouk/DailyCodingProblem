@@ -20,7 +20,7 @@ class Problem1 {
 
     static boolean isSumPossible(int expectedSum, List<Integer> nbList) {
 
-        if (expectedSum == 0 || nbList.isEmpty() || nbList.size() == 1) {
+        if (expectedSum == 0 || nbList.size() <= 1) {
             return false;
         }
 
