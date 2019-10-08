@@ -1,0 +1,23 @@
+> Describe what happens when you type a URL into your browser and press Enter ?
+
+1) Depending on the browser and search engine, typing in the address bar of the browser will send the url each time to
+send you recommendations.
+
+2) The browser searches the caches for a DNS record to find the corresponding IP address
+    a/ Checks the browser cache
+    b/ Browser checks the OS cache
+    c/ Computer checks router cache
+    d/ Browser checks the ISP cache
+
+3) If not in cache, browser asks the ISP's DNS a DNS query to multiple DNS servers to find the IP address.
+
+4) Init TCP connection with the found server : TCP/IP three-way handshake
+    a/ Client sends SYN packet to ask if it's open for new connections
+    b/ Server responds ACK
+    c/ Client receives SYN/ACK
+
+5) The client sends a GET request on the requested web server
+
+6) The server receives and sends back a response (HTML / XML / JSON) with a status code
+
+7) The browser displays the HTML content
