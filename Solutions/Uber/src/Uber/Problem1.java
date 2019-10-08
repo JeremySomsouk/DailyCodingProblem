@@ -12,20 +12,24 @@ Follow-up: what if you can't use division?
 
 */
 
+import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
+
+import static java.util.stream.Collectors.toList;
 
 class Problem1 {
 
-    private static ScheduledExecutorService executor;
-
     public static void main(String args[]) {
+
+        List<Integer> input = Arrays.asList(1, 2, 3, 4, 5);
+        System.out.println(multiplyArray(input));
     }
 
-    private static List<Integer> scheduleTask(Runnable runnable, int delay) {
+    private static List<Integer> multiplyArray(List<Integer> input) {
 
+        Integer allMultiplied = input.stream().reduce(1, (i, j) -> i * j);
+        return input.stream()
+                .map(number -> allMultiplied / number)
+                .collect(toList());
     }
 }
