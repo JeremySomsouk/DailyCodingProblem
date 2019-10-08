@@ -9,15 +9,3 @@ For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0] should g
 You can modify the input array in-place.
 
 """
-
-# Stupid solution -_-, just for sorted array :(
-def getMissing(numbers):
-    if numbers[0] != 1:
-        return 1
-    else:
-        for i in range(1, len(numbers)):
-            if numbers[i] != (1 + numbers[i - 1]):
-                return numbers[i - 1] + 1
-        return numbers[-1] + 1
-    
-getMissing([1, 2, 3, 6])
