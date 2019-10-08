@@ -1,4 +1,4 @@
-/* Asked by: Google.
+/*
 
 Good morning! Here's your coding interview problem for today.
 
@@ -19,7 +19,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class Test1 {
+class Test1 {
 
     @Test
     void isSumPossible_shouldReturnTrue_whenSumPossible1() {

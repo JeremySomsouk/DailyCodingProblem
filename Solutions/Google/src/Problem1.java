@@ -1,4 +1,4 @@
-/* Asked by: Google.
+/*
 
 Good morning! Here's your coding interview problem for today.
 
@@ -14,9 +14,9 @@ Bonus: Can you do this in one pass
 
 import java.util.List;
 
-public class Problem1 {
+class Problem1 {
 
-    public static boolean isSumPossible(int k, List<Integer> nbList) {
+    static boolean isSumPossible(int k, List<Integer> nbList) {
 
         if (k == 0 || nbList.isEmpty() || nbList.size() == 1) {
             return false;
@@ -25,9 +25,9 @@ public class Problem1 {
         int beforeLastIndex = nbList.size() - 2;
         int lastIndex = nbList.size() - 1;
 
-        for (int i = 0; i <= beforeLastIndex; i++) {
-            for (int iteratorIndex = i + 1; iteratorIndex <= lastIndex; ++iteratorIndex) {
-                if (nbList.get(i) + nbList.get(iteratorIndex) == k) {
+        for (int i = 0; i <= beforeLastIndex; ++i) {
+            for (int next = i + 1; next <= lastIndex; ++next) {
+                if (nbList.get(i) + nbList.get(next) == k) {
                     return true;
                 }
             }
