@@ -30,6 +30,18 @@ class Test1 {
 
         assertThat(overlappingRooms(input)).isEqualTo(1);
     }
+
+    @Test
+    void overlappingRooms_shouldReturnOne_whenNoOverlappingIntervals() {
+
+        List<Pair> input = Arrays.asList(
+                new Pair(0, 50),
+                new Pair(60, 150)
+        );
+
+        assertThat(overlappingRooms(input)).isEqualTo(1);
+    }
+
     @Test
     void overlappingRooms_shouldReturnTwo_whenTwoOverlappingIntervals() {
 
