@@ -8,7 +8,6 @@ Implement a job scheduler which takes in a function f and an integer n, and call
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 class Problem1 {
@@ -24,7 +23,7 @@ class Problem1 {
         executor = null;
     }
 
-    private static ScheduledFuture scheduleTask(Runnable runnable, int delay) {
-        return executor.schedule(runnable, delay, TimeUnit.MILLISECONDS);
+    private static void scheduleTask(Runnable runnable, int delay) {
+        executor.schedule(runnable, delay, TimeUnit.MILLISECONDS);
     }
 }
