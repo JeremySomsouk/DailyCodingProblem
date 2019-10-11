@@ -31,13 +31,11 @@ class Problem1 {
         Set<Integer> inputSet = new HashSet<>(input);
 
         int i = 1;
-        while (i > 0) {
+        while (true) {
             if (!inputSet.contains(i)) {
                 return i;
             }
             ++i;
         }
-
-        return i;
     }
 }
