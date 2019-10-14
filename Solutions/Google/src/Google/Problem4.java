@@ -23,7 +23,7 @@ class Problem4 {
             return 0;
         }
 
-        if (node.getLeft() == null && node.getRight() == null) {
+        if (isLeaf(node)) {
             return 1;
         }
 
@@ -42,10 +42,13 @@ class Problem4 {
     }
 
     private static <T> boolean isSubTreeUnival(Node<T> node, T parentValue) {
-        return (node.getLeft() == null && node.getRight() == null) ||
-                (node.getLeft().getValue().equals(parentValue)
-                        && node.getRight().getValue().equals(parentValue)
-                        && isSubTreeUnival(node.getLeft(), parentValue)
-                        && isSubTreeUnival(node.getRight(), parentValue));
+        return (isLeaf(node)) || (node.getLeft().getValue().equals(parentValue)
+                && node.getRight().getValue().equals(parentValue)
+                && isSubTreeUnival(node.getLeft(), parentValue)
+                && isSubTreeUnival(node.getRight(), parentValue));
+    }
+
+    private static boolean isLeaf(Node<?> node) {
+        return node.getLeft() == null && node.getRight() == null;
     }
 }
