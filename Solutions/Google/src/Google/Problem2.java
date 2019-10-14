@@ -21,9 +21,6 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 
 */
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -39,7 +36,7 @@ class Problem2 {
             return EMPTY_MARKER + "-";
         }
 
-        return node.value + "-" + serialize(node.left) + serialize(node.right);
+        return node.getValue() + "-" + serialize(node.getLeft()) + serialize(node.getRight());
     }
 
     static Node deserialize(String serializedNode) {
@@ -58,37 +55,13 @@ class Problem2 {
                 return null;
             }
 
-            Node node = new Node(nodeValue);
-            node.left = deserialize(serializedNodes);
-            node.right = deserialize(serializedNodes);
+            Node node = new Node<>(nodeValue);
+            node.setLeft(deserialize(serializedNodes));
+            node.setRight(deserialize(serializedNodes));
 
             return node;
         }
 
         return null;
-    }
-
-    @Getter
-    @EqualsAndHashCode
-    static class Node {
-
-        private String value;
-        private Node left;
-        private Node right;
-
-        Node(String value) {
-            this.value = value;
-        }
-
-        Node(String value, Node left) {
-            this.value = value;
-            this.left = left;
-        }
-
-        Node(String value, Node left, Node right) {
-            this.value = value;
-            this.left = left;
-            this.right = right;
-        }
     }
 }

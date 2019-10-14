@@ -21,7 +21,6 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 
 */
 
-import Google.Problem2.Node;
 import org.junit.jupiter.api.Test;
 
 import static Google.Problem2.deserialize;
@@ -33,14 +32,14 @@ class Test2 {
     @Test
     void serializeDeserialize_shouldReturnValue() {
 
-        Node root = new Node("root", new Node("left", new Node("left.left")), new Node("right"));
+        Node root = new Node<>("root", new Node("left", new Node("left.left")), new Node("right"));
         assertThat(deserialize(serialize(root)).getLeft().getLeft().getValue()).isEqualTo("left.left");
     }
 
     @Test
     void serializeDeserialize_shouldReturnValueNullChild_whenOnlyRootNode() {
 
-        Node root = new Node("root");
+        Node root = new Node<>("root");
 
         String serializedRoot = serialize(root);
         assertThat(serializedRoot).isEqualTo("root-/-/-");
@@ -53,8 +52,8 @@ class Test2 {
     @Test
     void serializeDeserialize_shouldReturnLeftValue_whenRootAndLeftChild() {
 
-        Node left = new Node("left");
-        Node root = new Node("root", left);
+        Node left = new Node<>("left");
+        Node root = new Node<>("root", left);
 
         String serializedNode = serialize(root);
         assertThat(serializedNode).isEqualTo("root-left-/-/-/-");
