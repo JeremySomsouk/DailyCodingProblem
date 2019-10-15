@@ -1,6 +1,4 @@
-package Google;
-
-/*
+package Facebook;/*
 
 Given a string of round, curly, and square open and closing brackets, return whether the brackets are balanced (well-formed).
 
@@ -12,7 +10,7 @@ Given the string "([)]" or "((()", you should return false
 
 import org.junit.jupiter.api.Test;
 
-import static Google.Problem5.areBracketsBalanced;
+import static Facebook.Problem5.areBracketsBalanced;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class Test5 {
