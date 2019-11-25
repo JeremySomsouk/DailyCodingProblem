@@ -15,7 +15,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static Snapchat.Problem1.Pair;
 import static Snapchat.Problem1.overlappingRooms;
 import static org.assertj.core.api.Assertions.assertThat;
 

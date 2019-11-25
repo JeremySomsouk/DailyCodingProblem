@@ -46,13 +46,4 @@ class Problem1 {
 
         return maxRoomsNeeded;
     }
-
-
-    @Getter
-    @AllArgsConstructor
-    @EqualsAndHashCode
-    static class Pair {
-        private int x;
-        private int y;
-    }
 }
