@@ -9,10 +9,6 @@ For example, given [(30, 75), (0, 50), (60, 150)], you should return 2.
 
 */
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
