@@ -18,7 +18,7 @@ class Problem10 {
 
     static boolean canBePartitionedEquallyInTwo(List<Integer> multiset) {
 
-        if (multiset == null || multiset.isEmpty() || multiset.size() == 1) {
+        if (multiset == null || multiset.size() <= 1) {
             return false;
         }
 
