@@ -35,9 +35,7 @@ class Problem1 {
         int currentOccupation = 0;
         for (Integer weight : weightsInOrder) {
             currentOccupation += weight;
-            if (maxRoomsNeeded < currentOccupation) {
-                maxRoomsNeeded = currentOccupation;
-            }
+            maxRoomsNeeded = Math.max(maxRoomsNeeded, currentOccupation);
         }
 
         return maxRoomsNeeded;
