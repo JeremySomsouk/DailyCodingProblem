@@ -27,9 +27,7 @@ class Problem8 {
                 
                 if (currentPrice < nextPrice) {
                     int profitMargin = nextPrice - currentPrice;
-                    if (profitMargin > maxProfit) {
-                        maxProfit = profitMargin;
-                    }
+                    maxProfit = Math.max(maxProfit, profitMargin);
                 }
             }
         }
