@@ -14,7 +14,9 @@ Bonus: Can you do this in one pass
 
 */
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 class Problem1 {
 
@@ -24,15 +26,13 @@ class Problem1 {
             return false;
         }
 
-        int beforeLastIndex = nbList.size() - 2;
-        int lastIndex = nbList.size() - 1;
-
-        for (int i = 0; i <= beforeLastIndex; ++i) {
-            for (int next = i + 1; next <= lastIndex; ++next) {
-                if (nbList.get(i) + nbList.get(next) == expectedSum) {
-                    return true;
-                }
+        Map<Integer, Integer> sumToComplete = new HashMap<>();
+        for (Integer integer : nbList) {
+            int valueToCompleteSum = expectedSum - integer;
+            if (sumToComplete.get(valueToCompleteSum) != null) {
+                return true;
             }
+            sumToComplete.put(integer, valueToCompleteSum);
         }
 
         return false;
